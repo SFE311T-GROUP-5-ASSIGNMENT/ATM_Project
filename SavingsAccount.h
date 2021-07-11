@@ -11,23 +11,25 @@
 class SavingsAccount :public Account
 {
 private:
-	double annualInterestRate; //this variable will store the annual interest rate
+   static double annualInterestRate; //this variable will store the annual interest rate
 
 
 public:
 	//default constructor
-	SavingsAccount() { annualInterestRate = 0.0; }
-	SavingsAccount(double);
+	SavingsAccount();
+	//SavingsAccount(double);
 	~SavingsAccount();
 	
 	//Accessors
 	double getMonthlyInterestRate(double);
 	double getMonthlyInterest(double);
 	//Modifiers
+	void setMonthlyInterestRate(double);
+	void setMonthlyInterest(double);
 };
-SavingsAccount::SavingsAccount(double s)
+SavingsAccount::SavingsAccount()
 {
-	annualInterestRate = s;
+	annualInterestRate = 35;
 }
 SavingsAccount::~SavingsAccount()
 {
@@ -35,14 +37,23 @@ SavingsAccount::~SavingsAccount()
 }
 double SavingsAccount::getMonthlyInterestRate(double mIRate)
 {
-
+	
 
 	return mIRate;
 }
 double SavingsAccount::getMonthlyInterest(double mInt)
 {
-	//
-	
+	 	
 	return mInt;
 }
+void SavingsAccount::setMonthlyInterest(double mInt)
+{
+	
+}
+void SavingsAccount::setMonthlyInterestRate(double mIRate)
+{
+
+}
+
 #endif // SavingsAccount_H
+
