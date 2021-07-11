@@ -1,10 +1,13 @@
 #include "ATM_Account.h"
 #include "CheckingAccount.h"
 #include "SavingsAccount.h"
-
+#include <iomanip>
 using namespace std;
+
+//global variables and functions
 const int acc = 5;
 int option;
+int inputError(int&);
 void menu(int&);
 int main()
 {  // ==== ATM database ==========//
@@ -20,37 +23,44 @@ int main()
 	sav[3]->setID(33333);						checkAcc[3]->setID(88888);
 	sav[4]->setID(44444);						checkAcc[4]->setID(99999);
 			
+	
 //==============DECLARATION OF VARIABLES =================================
 	int ID;
 	/*double bal, mthInterest, mIntRate;
 	double withdrawAmt, DepAmount, OverdraftLimit;*/
-	bool isValid = false;
+	bool start = false;
 	string Access;
 
 	
-//================== START ================================================
+			//================== START ================================================
+	cout << "====================  WELCOME ===========================\n\nLETS GET STARTED" << endl;
+	cout << endl;
+	system("pause");
 
-	while (!isValid)
+	while (!start)
 	{
 		//This will clear the console
 		system("cls");
 		bool found = false;
-	
+		bool isValid = false;
 
 		cout << "Please enter your Account ID:  ";
-		cin >> ID;
+		ID = inputError(ID);
+		
 		int index = 0;
 
+
+		//====== this loop will validate the ID ===========
 		for (int i = 0; i < acc; i++)
 		{
 				if (ID == sav[i]->getID())
 				{
 				
-				Access = "Savings Account";
-				found = true;
-				index = i;
-				cout << "Position -> " << index << endl;
-				break;
+					Access = "Savings Account";
+					found = true;
+					index = i;
+					cout << "Position -> " << index << endl;
+					break;
 				}
 
 			
@@ -63,13 +73,27 @@ int main()
 					break;
 				}
 			
-		}
+		}//for-loop
+
+		//if no match was found
 		if (found == false)
 		{
 			cout << "Your ID was not found--" << endl;
+			isValid = true;
 			
 		}
 
+		// This while-loop will run the main menu of this ATM program
+		while (Access == "Savings Account" || Access == "Checking Account")
+		{
+			menu(option);
+			
+			if (option >= 5)
+			{
+				isValid = false;
+				break;
+			}
+		}
 		system("pause");
 	}
 
@@ -83,7 +107,9 @@ int main()
 
 void menu(int&option)
 {
+	int i;
 	
+	//system("cls");
 	cout << "\n\t*************MENU****************";
 	cout << "\n\t*                               *";
 	cout << "\n\t*        1. Check Balance       *";
@@ -94,6 +120,25 @@ void menu(int&option)
 	cout << "\n\t*                               *";
 	cout << "\n\t*********************************";
 	cout << "\n\t  Please choose an option: ";
-	cin >> option;
+	option = inputError(i);
 	
+	
+}
+int inputError(int&i)
+{
+	
+	
+	while (true)
+	{
+		cin >> i;
+		if (!cin)
+		{
+			cout << "Wrong Choice. Enter again " << endl;
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			continue;
+		}
+		else break;
+	}
+	return i;
 }
