@@ -28,7 +28,7 @@ public:
 	
 	//Accessors
 	double getMonthlyInterestRate();
-	double getMonthlyInterest(double);
+	double getMonthlyInterest(double,double);
 	//Modifiers
 	//void setMonthlyInterestRate();
 	//void setMonthlyInterest(double);
@@ -43,10 +43,10 @@ double SavingsAccount::getMonthlyInterestRate()
 	
 	return (annualInterestRate / 100) / 12;
 }
-double SavingsAccount::getMonthlyInterest(double interestRate)
+double SavingsAccount::getMonthlyInterest(double interestRate, double bal)
 { 
-	balance =+ balance * interestRate;
-	return balance;
+	bal += bal * interestRate;
+	return bal;
 }
 
 #endif // SavingsAccount_H
