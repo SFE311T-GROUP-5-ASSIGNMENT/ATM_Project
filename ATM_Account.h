@@ -18,10 +18,7 @@ protected:
 
 
 public:
-	
-Account() { ID = 00000; balance = 0.0; };
-Account(int b, double c);
-~Account();
+Account(int,double);
 
 void setID(int);
 void setBalance(double);
