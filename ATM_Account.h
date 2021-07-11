@@ -10,7 +10,7 @@ using namespace std;
 class Account
 {
 
-private:
+protected:
 		
 	int ID;
 	double balance;
@@ -19,7 +19,7 @@ private:
 
 public:
 	
-	Account() { ID = 00000; balance = 0; };
+Account() { ID = 00000; balance = 0.0; };
 Account(int b, double c);
 ~Account();
 

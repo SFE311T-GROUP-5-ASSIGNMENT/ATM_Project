@@ -17,7 +17,7 @@ private:
 public:
 	//default constructor
 	CheckingAccount() { overdraft = 0.0; };
-	CheckingAccount(double o);
+	CheckingAccount(double);
 	~CheckingAccount();
 
 	

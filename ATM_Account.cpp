@@ -3,16 +3,35 @@
 #include "SavingsAccount.h"
 
 using namespace std;
-int option;
-void menu(int&);
+//int option;
+//void menu(int&);
 int main()
-{
+{ //ATM database
+	SavingsAccount savings1,savings2,savings3;
+	CheckingAccount check1,check2,check3;
+	Account* sav[3] = { &savings1,&savings2,&savings3 };
+	Account* checkAcc[3] = {&check1,&check2,&check3};
+	int ID;
+
+	sav[0]->setID(12345);
+	sav[0]->setBalance(45000.00);
+	checkAcc[1]->setBalance(25000.00);
+
+	//search
+	cout << "Enter Acc ID:  ";
+	cin >> ID;
+	//finding balance
+	if (ID == savings1.getID())
+	{
+		cout << savings1.getBalance() << endl;
+	}
+	else
+		cout << "Invalid ID" << endl;
 	
-	menu(option);
-
-	cout <<option << endl;
-	//cout << option<<endl;
-
+	//cout << check2.getBalance() << endl;
+	//menu(option)
+	
+	system("pause");
 	return 0;
 }
 

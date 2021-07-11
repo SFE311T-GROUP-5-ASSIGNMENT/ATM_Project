@@ -16,7 +16,8 @@ private:
 
 public:
 	//default constructor
-	SavingsAccount();
+	SavingsAccount() { annualInterestRate = 0.0; }
+	SavingsAccount(double);
 	~SavingsAccount();
 	
 	//Accessors
@@ -24,9 +25,9 @@ public:
 	double getMonthlyInterest(double);
 	//Modifiers
 };
-SavingsAccount::SavingsAccount()
+SavingsAccount::SavingsAccount(double s)
 {
-	annualInterestRate = 0.0;
+	annualInterestRate = s;
 }
 SavingsAccount::~SavingsAccount()
 {
