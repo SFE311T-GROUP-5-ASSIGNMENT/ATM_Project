@@ -8,28 +8,25 @@
 using namespace std;
 
 class Account
-{
+{ 
+	protected:
+		   
 
-protected:
-		
 	int ID;
 	double balance;
 	string dateCreated;
 
 
-public:
-	
-Account() { ID = 00000; balance = 0.0; };
-Account(int b, double c);
-~Account();
+	public:
+	Account(int,double);
 
-void setID(int);
-void setBalance(double);
-int getID();
-double getBalance();
+	void setID(int);
+	void setBalance(double);
+	int getID();
+	double getBalance();
 		
-double withdraw(double);
-double deposit(double);
+	double withdraw(double);
+	double deposit(double);
 
 };
 
