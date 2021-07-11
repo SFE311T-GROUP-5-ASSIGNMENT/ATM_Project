@@ -18,7 +18,7 @@ protected:
 
 
 public:
-	Account() { ID = 00000; balance = 0.0;}
+	Account() { ID = 00000; balance = 0.00;}
 	~Account();
 
 void setID(int);

@@ -59,17 +59,17 @@ int main()
 					Access = "Savings Account";
 					found = true;
 					index = i;
-					cout << "Position -> " << index << endl;
+					
 					break;
 				}
 
 			
 				else if (ID == checkAcc[i]->getID())
 				{
-					Access = "Check Account";
+					Access = "Checking Account";
 					found = true;
 					index = i;
-					cout << "Position -> " << index << endl;
+					
 					break;
 				}
 			
@@ -87,9 +87,45 @@ int main()
 		while (Access == "Savings Account" || Access == "Checking Account")
 		{
 			menu(option);
-			
+
+			//==================================================================//
+			//if statement that will contain switch conditions for savings account
+			if (Access == "Savings Account")
+			{
+				switch (option)
+				{
+				case 1:
+					cout << "Savings Account Balance: R "<< setprecision(2) << sav[index]->getBalance();
+					break;
+				case 2:
+					break;
+				case 3:
+					break;
+				case 4:
+					break;
+				}
+			}
+
+			//================================================================//
+			//this if statement will contain switch cases for Checking account
+			if (Access == "Checking Account")
+			{
+				switch (option)
+				{
+				case 1:
+					cout << "Checking Account Balance : R " << setprecision(2) <<checkAcc[index]->getBalance();
+					break;
+				case 2:
+					break;
+				case 3:
+					break;
+				case 4:
+					break;
+				}
+			}
 			if (option >= 5)
 			{
+				cout << "Invalid option\n\n";
 				isValid = false;
 				break;
 			}

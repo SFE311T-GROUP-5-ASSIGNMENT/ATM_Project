@@ -28,7 +28,7 @@ public:
 
 CheckingAccount::CheckingAccount()
 {
-	overdraft = 0.0;
+	overdraft = 0.00;
 }
 CheckingAccount::~CheckingAccount()
 {
