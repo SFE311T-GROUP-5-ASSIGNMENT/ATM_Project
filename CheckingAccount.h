@@ -16,7 +16,7 @@ private:
 
 public:
 	//default constructor
-	CheckingAccount();
+	CheckingAccount(double,int,double);
 	~CheckingAccount();
 
 	//Accessor
@@ -29,6 +29,7 @@ public:
 
 CheckingAccount::CheckingAccount()
 {
+
 }
 
 CheckingAccount::~CheckingAccount()
