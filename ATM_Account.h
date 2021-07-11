@@ -26,8 +26,8 @@ void setBalance(double);
 int getID();
 double getBalance();
 		
-double withdraw(double);
-double deposit(double);
+void withdraw(double);
+void deposit(double);
 
 };
 Account::~Account()
@@ -51,14 +51,20 @@ double Account::getBalance()
 {
 	return balance;
 }	
-double Account::withdraw(double wthdrw)
+void Account::withdraw(double wdraw)
 {
-
-	return wthdrw;
+	if (balance >= wdraw) {
+		wdraw = balance - wdraw;
+		cout << "Your current balance is: " << wdraw << endl;
+	}
+	else {
+		cout << "No money" << endl;
+	}
+	
 }
-double Account::deposit(double dep)
+void Account::deposit(double dep)
 {
-	return dep;
-
+	balance = dep + balance;
+	cout << "Your current balance is: R" << balance << endl;
 }
 #endif // !Account_h

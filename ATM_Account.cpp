@@ -26,10 +26,10 @@ int main()
 	
 //==============DECLARATION OF VARIABLES =================================
 	int ID;
-	/*double bal, mthInterest, mIntRate;
-	double withdrawAmt, DepAmount, OverdraftLimit;*/
+	
+	double withdrawAmt, DepAmount, OverdraftLimit;
 	bool start = false;
-	string Access;
+	
 
 	
 			//================== START ================================================
@@ -43,6 +43,7 @@ int main()
 		system("cls");
 		bool found = false;
 		bool isValid = false;
+		string Access;
 
 		cout << "Please enter your Account ID:  ";
 		ID = inputError(ID);
@@ -73,14 +74,14 @@ int main()
 					break;
 				}
 			
-		}//for-loop
+		}//end loop
 
 		//if no match was found
 		if (found == false)
 		{
 			cout << "Your ID was not found--" << endl;
 			isValid = true;
-			
+			found = true;
 		}
 
 		// This while-loop will run the main menu of this ATM program
@@ -95,16 +96,23 @@ int main()
 				switch (option)
 				{
 				case 1:
-					cout << "Savings Account Balance: R "<< setprecision(2) << sav[index]->getBalance();
+					cout << "Savings Account Balance: R "<< fixed << setprecision(2) << sav[index]->getBalance();
+					cout << endl;
 					break;
 				case 2:
+					sav[index]->getBalance();
+					cout << "ENTER DEPOSIT AMOUNT:  ";
+					cin >> DepAmount;
+					cout << endl;
+					sav[index]->deposit(DepAmount);
 					break;
 				case 3:
+
 					break;
 				case 4:
 					break;
 				}
-			}
+			}//endif
 
 			//================================================================//
 			//this if statement will contain switch cases for Checking account
@@ -113,25 +121,38 @@ int main()
 				switch (option)
 				{
 				case 1:
-					cout << "Checking Account Balance : R " << setprecision(2) <<checkAcc[index]->getBalance();
+					cout << "Checking Account Balance : R " << fixed << setprecision(2) <<checkAcc[index]->getBalance();
 					break;
 				case 2:
+					checkAcc[index]->getBalance();
+					cout << "ENTER DEPOSIT AMOUNT:  ";
+					cin >> DepAmount;
+					cout << endl;
+					checkAcc[index]->deposit(DepAmount);
 					break;
 				case 3:
 					break;
 				case 4:
 					break;
 				}
-			}
+			}//endif
+			
 			if (option >= 5)
-			{
+			{ 
+				if (option == 5)
+				{
+					cout << "EXIT\n\n";
+					break;
+				}
 				cout << "Invalid option\n\n";
 				isValid = false;
 				break;
-			}
-		}
+			}//endif
+		
+		}//end while-loop
 		system("pause");
-	}
+	
+	}//end while-loop
 
 
 
