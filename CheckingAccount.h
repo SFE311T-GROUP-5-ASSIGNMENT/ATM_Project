@@ -20,22 +20,49 @@ public:
 	~CheckingAccount();
 
 	
-	
+//Accessor
+	double getOverdraftlimit()
+	{
+		return overdraft;
+	}
+
 	//Modifier
-	double getOverdraft();
+	void setOverdraftlimit(int ovd) 
+	{	
+		overdraft = ovd;
+	}
+	//method
+	void Overdraft(double,double);
 
 };
 
 CheckingAccount::CheckingAccount()
 {
-	overdraft = 0.00;
+	overdraft = 0.0;
 }
 CheckingAccount::~CheckingAccount()
 {
 }
-double CheckingAccount::getOverdraft()
+
+void CheckingAccount::Overdraft(double bal,double wdraw)
 {
-	return overdraft;
+	
+	wdraw = balance - wdraw;
+	if (balance >= 0) {
+		cout << "Your Current Account Balance is " << balance << endl;
+	}
+	else if (balance < 0) {
+		overdraft = wdraw + overdraft;
+	}
+	else {
+		if (wdraw >= overdraft) 
+		{
+			cout << "Try again" << endl;
+		}
+		else {
+			cout << "You passed your overdraftlimit" << endl;
+		}
+	}
 
 }
 #endif //CheckingAccount_H
