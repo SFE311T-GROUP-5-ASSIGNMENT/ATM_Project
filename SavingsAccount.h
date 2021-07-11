@@ -35,9 +35,8 @@ double SavingsAccount::getMonthlyInterestRate(double mIRate)
 }
 double SavingsAccount::getMonthlyInterest(double mInt)
 {
-	//double bal = getBalance();
-	//balance x monthlyInterestRate
-	//mInt = getBalance();
+	//
+	
 	return mInt;
 }
 #endif // SavingsAccount_H

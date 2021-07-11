@@ -25,8 +25,6 @@ public:
 	//Modifier
 	double getOverdraft();
 
-
-
 };
 
 CheckingAccount::CheckingAccount()
