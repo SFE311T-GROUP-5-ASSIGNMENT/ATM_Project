@@ -101,17 +101,35 @@ int main()
 					break;
 				case 2:
 					sav[index]->getBalance();
-					cout << "ENTER DEPOSIT AMOUNT:  ";
+					cout << "ENTER DEPOSIT AMOUNT:  R";
 					cin >> DepAmount;
 					cout << endl;
 					sav[index]->deposit(DepAmount);
 					break;
 				case 3:
+					cout << "ENTER WITHDRAWAL AMOUNT: R";
+						cin >> withdrawAmt;
+					switch (index)
+					{
+					case 0:
 
+						break;
+					case 1:
+						break;
+					case 2:
+						break;
+					case 3:
+						break;
+					case 4:
+						break;
+					default:
+						break;
+
+					}//close switch					
+
+				default:
 					break;
-				case 4:
-					break;
-				}
+				}//close switch
 			}//endif
 
 			//================================================================//
@@ -132,14 +150,14 @@ int main()
 					break;
 				case 3:
 					break;
-				case 4:
-					break;
+				
 				}
 			}//endif
 			
-			if (option >= 5)
+			//Testing condition of menu selection
+			if (option >= 4)
 			{ 
-				if (option == 5)
+				if (option == 4)
 				{
 					cout << "EXIT\n\n";
 					break;
@@ -172,8 +190,7 @@ void menu(int&option)
 	cout << "\n\t*        1. Check Balance       *";
 	cout << "\n\t*        2. Deposit             *";
 	cout << "\n\t*        3. Withdraw            *";
-	cout << "\n\t*        4. Transfer            *";
-	cout << "\n\t*        5. Exit                *";
+	cout << "\n\t*        4. Exit                *";
 	cout << "\n\t*                               *";
 	cout << "\n\t*********************************";
 	cout << "\n\t  Please choose an option: ";
