@@ -6,7 +6,7 @@ using namespace std;
 //int option;
 //void menu(int&);
 int main()
-{ //ATM database
+{  //ATM database
 	SavingsAccount savings1,savings2,savings3;
 	CheckingAccount check1,check2,check3;
 	Account* sav[3] = { &savings1,&savings2,&savings3 };
