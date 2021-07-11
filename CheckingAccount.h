@@ -16,8 +16,7 @@ private:
 
 public:
 	//default constructor
-	CheckingAccount() { overdraft = 0.0;};
-	CheckingAccount(double);
+	CheckingAccount();
 	~CheckingAccount();
 
 	
@@ -27,9 +26,9 @@ public:
 
 };
 
-CheckingAccount::CheckingAccount(double o)
+CheckingAccount::CheckingAccount()
 {
-	overdraft = o;
+	overdraft = 0.0;
 }
 CheckingAccount::~CheckingAccount()
 {
