@@ -16,28 +16,22 @@ private:
 
 public:
 	//default constructor
-	CheckingAccount(double,int,double);
+	CheckingAccount(double, int, double);
 	~CheckingAccount();
 
-	//Accessor
-	void setOverdraft(double);
+	
 	
 	//Modifier
 	double getOverdraft();
 
 };
 
-CheckingAccount::CheckingAccount()
-{
-
-}
-
-CheckingAccount::~CheckingAccount()
-{
-}
-void CheckingAccount::setOverdraft(double ovd)
+CheckingAccount::CheckingAccount(double ovd,int id,int balance)
 {
 	overdraft = ovd;
+}
+CheckingAccount::~CheckingAccount()
+{
 }
 double CheckingAccount::getOverdraft()
 {

@@ -18,7 +18,7 @@ private:
 
 
 public:
-Account();
+Account(int,double);
 
 void setID(int);
 void setBalance(double);
@@ -30,11 +30,10 @@ double deposit(double);
 
 };
 
-Account::Account()
+Account::Account(int i,double b)
 {
-	balance = 10000;
-	ID = 00000;
-
+	balance = b;
+	ID = i;
 
 }
 
