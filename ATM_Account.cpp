@@ -26,13 +26,10 @@ int main()
 	
 //==============DECLARATION OF VARIABLES =================================
 	int ID;
-	
-	double withdrawAmt, DepAmount, OverdraftLimit;
+	double withdrawAmt, DepAmount,balance;
 	bool start = false;
-	
-
-	
-			//================== START ================================================
+		
+//================== START ================================================
 	cout << "====================  WELCOME ===========================\n\nLETS GET STARTED" << endl;
 	cout << endl;
 	system("pause");
@@ -95,42 +92,37 @@ int main()
 			{
 				switch (option)
 				{
-				case 1:
+				case 1://Menu Option 1
+
 					cout << "Savings Account Balance: R "<< fixed << setprecision(2) << sav[index]->getBalance();
 					cout << endl;
 					break;
-				case 2:
+				
+				case 2://Menu option 2
+					
 					sav[index]->getBalance();
 					cout << "ENTER DEPOSIT AMOUNT:  R";
 					cin >> DepAmount;
 					cout << endl;
 					sav[index]->deposit(DepAmount);
 					break;
-				case 3:
+				
+				case 3://Menu option 3
+				
 					cout << "ENTER WITHDRAWAL AMOUNT: R";
-						cin >> withdrawAmt;
-					switch (index)
-					{
-					case 0:
+					cin >> withdrawAmt;
+					sav[index]->withdraw(withdrawAmt);
+					cout << endl;
+					
+			
 
-						break;
-					case 1:
-						break;
-					case 2:
-						break;
-					case 3:
-						break;
-					case 4:
-						break;
-					default:
-						break;
-
-					}//close switch					
+					
 
 				default:
 					break;
 				}//close switch
 			}//endif
+
 
 			//================================================================//
 			//this if statement will contain switch cases for Checking account
@@ -149,9 +141,66 @@ int main()
 					checkAcc[index]->deposit(DepAmount);
 					break;
 				case 3:
+					cout << "ENTER WITHDRAWAL AMOUNT\tR";
+					cin >> withdrawAmt;
+					cout << endl;
+
+					//this switch statement access the objects of Checking Account class
+					switch (index)
+					{
+					case 0:
+						balance = checkAcc[index]->getBalance();
+						check1.setOverdraftlimit(-400);
+						check1.Overdraft(withdrawAmt, balance);
+						cout << "AVAILABLE AMOUNT\tR" << fixed << setprecision(2) << balance - (check1.getOverdraftlimit());
+						cout << "O/D limit\tR" << fixed << setprecision(2) << (0 - (check1.getOverdraftlimit()));
+						cout << endl;
+						break;
+					case 1:
+
+						balance = checkAcc[index]->getBalance();
+						check2.setOverdraftlimit(-500);
+						check2.Overdraft(withdrawAmt, balance);
+						cout << "AVAILABLE AMOUNT\tR" << fixed << setprecision(2) << balance - (check2.getOverdraftlimit());
+						cout << "O/D limit\tR" << fixed << setprecision(2) << (0 - (check2.getOverdraftlimit()));
+						cout << endl;
+						break;
+					case 2:
+
+						balance = checkAcc[index]->getBalance();
+						check3.setOverdraftlimit(-600);
+						check3.Overdraft(withdrawAmt, balance);
+						cout << "AVAILABLE AMOUN\tR" << fixed << setprecision(2) << balance - (check3.getOverdraftlimit());
+						cout << "O/D limit\tR" << fixed << setprecision(2) << (0 - (check3.getOverdraftlimit()));
+						cout << endl;
+						break;
+					case 3:
+
+						balance = checkAcc[index]->getBalance();
+						check4.setOverdraftlimit(-700);
+						check4.Overdraft(withdrawAmt, balance);
+						cout << "AVAILABLE AMOUNT\tR" << fixed << setprecision(2) << balance - (check4.getOverdraftlimit());
+						cout << "O/D limit\tR" << fixed << setprecision(2) << (0 - (check4.getOverdraftlimit()));
+						cout << endl;
+						break;
+					case 4:
+
+						balance = checkAcc[index]->getBalance();
+						check5.setOverdraftlimit(-800);
+						check5.Overdraft(withdrawAmt, balance);
+						cout << "AVAILABLE AMOUNT\tR" << fixed << setprecision(2) << balance - (check5.getOverdraftlimit());
+						cout << "O/D limit\tR" << fixed << setprecision(2) << (0 - (check5.getOverdraftlimit()));
+						cout << endl;
+						break;
+					default:
+						break;
+
+					}//close switch
+
+					cout << "Balance\tR " << fixed <<  setprecision(2) << balance;
 					break;
 				
-				}
+				}//close swich
 			}//endif
 			
 			//Testing condition of menu selection
