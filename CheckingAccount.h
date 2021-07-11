@@ -16,30 +16,27 @@ private:
 
 public:
 	//default constructor
-	CheckingAccount();
+	CheckingAccount() { overdraft = 0.0; };
+	CheckingAccount(double o);
 	~CheckingAccount();
 
-	//Accessor
-	void setOverdraft(double);
+	
 	
 	//Modifier
 	double getOverdraft();
 
 };
 
-CheckingAccount::CheckingAccount()
+CheckingAccount::CheckingAccount(double o)
 {
+	overdraft = o;
 }
-
 CheckingAccount::~CheckingAccount()
 {
-}
-void CheckingAccount::setOverdraft(double ovd)
-{
-	overdraft = ovd;
 }
 double CheckingAccount::getOverdraft()
 {
 	return overdraft;
+
 }
 #endif //CheckingAccount_H
