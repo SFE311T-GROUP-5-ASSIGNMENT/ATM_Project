@@ -10,7 +10,7 @@ using namespace std;
 class Account
 {
 
-private:
+protected:
 		
 	int ID;
 	double balance;
@@ -18,29 +18,22 @@ private:
 
 
 public:
-	
-	Account() { ID = 00000; balance = 0; };
-Account(int b, double c);
-~Account();
+	Account() { ID = 00000; balance = 0.00;}
+	~Account();
 
 void setID(int);
 void setBalance(double);
 int getID();
 double getBalance();
 		
-double withdraw(double);
-double deposit(double);
+void withdraw(double);
+void deposit(double);
 
 };
-
-Account::Account(int a,double c)
+Account::~Account()
 {
-	balance = c;
-	ID = a;
 
 }
-Account::~Account()
-{}
 void Account::setID(int accNo)
 {
 	ID = accNo;
@@ -58,14 +51,20 @@ double Account::getBalance()
 {
 	return balance;
 }	
-double Account::withdraw(double wthdrw)
+void Account::withdraw(double wdraw)
 {
-
-	return wthdrw;
+	if (balance >= wdraw) {
+		wdraw = balance - wdraw;
+		cout << "Your current balance is: " << wdraw << endl;
+	}
+	else {
+		cout << "No money" << endl;
+	}
+	
 }
-double Account::deposit(double dep)
+void Account::deposit(double dep)
 {
-	return dep;
-
+	balance = dep + balance;
+	cout << "Your current balance is: R" << balance << endl;
 }
 #endif // !Account_h
